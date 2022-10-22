@@ -10,12 +10,14 @@ int ShowSecondNumber(int number)
     {
 
         Console.WriteLine("ошибка");
-    
-    }
-    
+    return -1;
+        }
+    else
+    {
     number=number/10;
     number=number%10;
 
-    return number; 
+    return number;
+    } 
      
 }
