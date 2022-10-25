@@ -17,23 +17,29 @@ if (result == 0)
 {
     Console.WriteLine($"{n} - не является палиндромом");
 }
-if (result==2)
+if (result == 2)
 {
     Console.WriteLine("Ошибка! Число не пятизначное");
 }
-int Palindrom(int number)
+int LenghtNumber(int a)
 {
     int count = 0;
-    while (number > 0)
+    while (a > 0)
     {
-        number /= 10;
+        a /= 10;
         count++;
     }
+    return count;
+}
+int Palindrom(int number)
+{
+    int count = LenghtNumber(number);
+    
     if (count == 5)
     {
-        int[] array = new int[5];
+        int[] array = new int[count];
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < count; i++)
         {
             array[i] = number % 10;
             number /= 10;
