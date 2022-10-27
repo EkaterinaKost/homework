@@ -17,10 +17,10 @@ if (result == 0)
 {
     Console.WriteLine($"{n} - не является палиндромом");
 }
-if (result == 2)
-{
-    Console.WriteLine("Ошибка! Число не пятизначное");
-}
+//if (result == 2)
+//{
+  //  Console.WriteLine("Ошибка! Число не пятизначное");
+//}
 int LenghtNumber(int a)
 {
     int count = 0;
@@ -34,27 +34,33 @@ int LenghtNumber(int a)
 int Palindrom(int number)
 {
     int count = LenghtNumber(number);
-    
-    if (count == 5)
-    {
-        int[] array = new int[count];
 
-        for (int i = 0; i < count; i++)
+    //if (count == 5)
+    //  {
+    int[] array = new int[count];
+
+    for (int y = 0; y < count; y++)
+    {
+        array[y] = number % 10;
+        number /= 10;
+    }
+    int i = 0;
+    int fix = count / 2;
+    while (i < fix)
+    {
+        if (array[i] == array[count-1])
         {
-            array[i] = number % 10;
-            number /= 10;
-        }
-        if (array[0] == array[4] && array[1] == array[3])
-        {
-            return 1;//почему то при ветвлении всегда возвращает 1...Почему?
+            i++;
+            count = count - 1;
         }
         else
         {
             return 0;
         }
     }
-    else
-    {
-        return 2;
-    }
+    return 1;
+    //else
+    //{
+      //  return 2;
+   // }
 }
