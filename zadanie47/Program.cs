@@ -27,8 +27,7 @@ double[,] CreateRandom2DArray(int m,int n)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = rand.NextDouble();//?!!выдает маленькие числа
-            //с большим количеством цифр после нуля...
+            array[i, j] = rand.NextDouble()*10;
         }
 
     }
@@ -40,7 +39,7 @@ void PrintArray(double[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{array[i,j]} ");
+            Console.Write($"{array[i,j]:F2} ");
         }
         Console.WriteLine();
     }
