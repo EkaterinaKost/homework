@@ -40,12 +40,12 @@ void PrintArray (int[,,] array3D)
 
 void CreateArray(int[,,] array3D)
 {
-  int[] temp = new int[array3D.GetLength(0) * array3D.GetLength(1) * array3D.GetLength(2)];
-  int  number;
+  int[] temp = new int[array3D.GetLength(0) *array3D.GetLength(1) *array3D.GetLength(2)];
+  
   for (int i = 0; i < temp.GetLength(0); i++)
   {
     temp[i] = new Random().Next(10, 100);
-    number = temp[i];
+   
     if (i >= 1)
     {
       for (int j = 0; j < i; j++)
@@ -54,9 +54,9 @@ void CreateArray(int[,,] array3D)
         {
           temp[i] = new Random().Next(10, 100);
           j = 0;
-          number = temp[i];
+         
         }
-          number = temp[i];
+          
       }
     }
   }
